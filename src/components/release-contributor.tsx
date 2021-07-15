@@ -1,5 +1,9 @@
-export const ReleaseContributor = () => (
+export const ReleaseContributor = ({
+  contributor,
+}: {
+  contributor: string;
+}) => (
   <p>
-    Contributed by <strong>Lauri Hintsala</strong>
+    Contributed by <strong>{contributor}</strong>
   </p>
 );

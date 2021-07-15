@@ -1,5 +1,5 @@
-export const ReleaseTitle = () => (
+export const ReleaseTitle = ({ version }: { version: string }) => (
   <h1 className="font-bold text-7xl mb-8">
-    <span className="underline">Strawberry 0.68.3 release</span> 🆕
+    <span className="underline">Strawberry {version} release</span> 🆕
   </h1>
 );
