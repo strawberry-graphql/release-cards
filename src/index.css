@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.card {
+  width: 1600px;
+  height: 900px;
+  background-color: #FFE500;
+}
