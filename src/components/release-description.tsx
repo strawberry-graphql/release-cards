@@ -1,5 +1,36 @@
+import { createElement, ReactNode } from "react";
+import marksy from "marksy";
+import "highlight.js/styles/github.css";
+
+import hljs from "highlight.js";
+// @ts-ignore
+import python from "highlight.js/lib/languages/python";
+
+hljs.registerLanguage("python", python);
+
+const compile = marksy({
+  createElement,
+
+  elements: {
+    p: ({ children }: { children: ReactNode }) => (
+      <p className="mb-4">{children}</p>
+    ),
+    code: ({ code, language }: { code: string; language: string }) => {
+      return (
+        <pre className="text-4xl leading-snug mb-4">
+          <code
+            dangerouslySetInnerHTML={{
+              __html: hljs.highlight(language, code).value,
+            }}
+          />
+        </pre>
+      );
+    },
+  },
+});
+
 export const ReleaseDescription = ({
   description,
 }: {
   description: string;
-}) => <div>{description}</div>;
+}) => <div>{compile(description).tree}</div>;
