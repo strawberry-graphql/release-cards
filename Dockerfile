@@ -8,4 +8,7 @@ RUN npm install
 
 COPY . .
 
+RUN ls -la
+RUN ls node_modules
+
 ENTRYPOINT ["/usr/src/app/entrypoint.sh"]
