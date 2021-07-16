@@ -1,6 +1,6 @@
 #!/bin/sh -l
 
-npm install1
+npm install
 npm run dev &
 
 npm run create-card
