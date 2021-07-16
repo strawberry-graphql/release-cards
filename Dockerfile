@@ -1,7 +1,11 @@
 FROM node:14-alpine
 
-COPY . .
+WORKDIR /usr/src/app
+
+COPY package*.json ./
 
 RUN npm install
 
-ENTRYPOINT ["/entrypoint.sh"]
+COPY . .
+
+ENTRYPOINT ["/usr/src/app/entrypoint.sh"]
