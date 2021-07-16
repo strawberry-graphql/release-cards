@@ -1,6 +1,10 @@
 #!/bin/sh -l
 
-npm install
-npm run build
-time=$(date)
-echo "::set-output name=time::$time"
+npm install1
+npm run dev &
+
+npm run create-card
+
+echo "Card done"
+
+trap "trap - SIGTERM && kill -- -$$" SIGINT SIGTERM EXIT
