@@ -1,4 +1,15 @@
-FROM node:14-alpine
+FROM node:14
+
+RUN apt-get update
+RUN apt-get install -y --no-install-recommends \
+    libnss3 \
+    libxss1 \
+    libasound2 \
+    libxtst6
+
+RUN mkdir -p /app/playwright-browsers
+ENV PLAYWRIGHT_BROWSERS_PATH /app/playwright-browsers/
+RUN npm install playwright
 
 WORKDIR /app
 
@@ -7,8 +18,5 @@ COPY package*.json ./
 RUN npm install
 
 COPY . .
-
-RUN ls -la
-RUN ls node_modules
 
 ENTRYPOINT ["/app/entrypoint.sh"]
