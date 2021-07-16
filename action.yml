@@ -1,0 +1,19 @@
+name: 'Strawberry Release Card'
+description: 'Generates a release card'
+inputs:
+  version:
+    description: 'Version number'
+    required: true
+  contributor:
+    description: 'Contributor name'
+    required: true
+  description:
+    description: 'Release description'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.version }}
+    - ${{ inputs.contributor }}
+    - ${{ inputs.description }}
