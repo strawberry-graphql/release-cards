@@ -5,7 +5,9 @@ RUN apt-get install -y --no-install-recommends \
     libnss3 \
     libxss1 \
     libasound2 \
-    libxtst6
+    libxtst6 \
+    libgbm1 \
+    libdrm-dev
 
 RUN mkdir -p /app/playwright-browsers
 ENV PLAYWRIGHT_BROWSERS_PATH /app/playwright-browsers/
