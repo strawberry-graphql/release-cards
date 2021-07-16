@@ -1,6 +1,7 @@
 #!/bin/sh -l
 
-pwd
+cd /app
+
 ls -la
 
 npm run start &
