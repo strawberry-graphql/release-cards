@@ -1,7 +1,7 @@
 #!/bin/sh -l
 
 npm install
-npm run dev &
+npm run start &
 
 npm run create-card
 
