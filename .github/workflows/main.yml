@@ -14,3 +14,9 @@ jobs:
           version: 1
           contributor: Jake
           description: this is a description
+
+      - name: 'Upload Artifact'
+        uses: actions/upload-artifact@v2
+        with:
+          path: /app/screenshot.png 
+          retention-days: 5
