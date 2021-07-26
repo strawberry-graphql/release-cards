@@ -16,7 +16,7 @@ RUN npm install
 
 COPY . .
 
-RUN npm run build
+# RUN npm run build
 
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
