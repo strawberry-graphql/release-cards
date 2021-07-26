@@ -18,6 +18,14 @@ jobs:
 
             [aaa](http://google.com)
 
+            \`\`\`python
+            import strawberry
+
+            @strawberry.type
+            class Code:
+              asd: str
+            \`\`\`
+
             - a list
             - a list
 
