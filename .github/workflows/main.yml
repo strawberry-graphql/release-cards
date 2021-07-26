@@ -16,13 +16,7 @@ jobs:
           description: |
             This a super **cool** release.
 
-            ```python
-            import strawberry
-
-            @strawberry.type
-            class Code:
-              i: str
-            ```
+            [aaa](http://google.com)
 
             Awesome.
 
