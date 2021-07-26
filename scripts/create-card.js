@@ -6,6 +6,8 @@ const path = require("path");
 const templatePath = path.resolve(`${__dirname}/../dist/index.html`);
 const tmpPath = path.resolve(`${__dirname}/../dist/tmp.html`);
 
+const [version, contributor, description] = process.argv.slice(2);
+
 function fileExists(file) {
   return fs
     .access(file, F_OK)
@@ -22,31 +24,21 @@ function fileExists(file) {
   template = template.replace(
     '<div id="root"></div>',
     renderCard({
-      version: "lol.1",
-      contributor: "Antonio",
-      description: "something something",
+      version,
+      contributor,
+      description,
     })
   );
 
   await fs.writeFile(tmpPath, template);
 
-  console.log("launching chrome");
-
   const browser = await chromium.launch({ headless: true });
   const page = await browser.newPage();
 
-  console.log("going to file", tmpPath);
   await page.goto(`file://${tmpPath}`);
 
-  console.log("waiting for card");
   const elementHandle = await page.$(".card");
 
-  console.log("screen");
-
   await elementHandle.screenshot({ path: "screenshot.png" });
-
-  console.log("close");
-
   await browser.close();
-  console.log("done");
 })();
