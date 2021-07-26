@@ -18,5 +18,6 @@ COPY . .
 
 # RUN npm run build
 
+RUN echo $PWD
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
