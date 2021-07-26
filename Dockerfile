@@ -10,8 +10,6 @@ RUN mkdir -p /app/playwright-browsers
 RUN npm install -g playwright
 RUN playwright install-deps chromium
 
-WORKDIR /app
-
 COPY package*.json ./
 
 RUN npm install
@@ -21,4 +19,4 @@ COPY . .
 # build things
 RUN npm run build
 
-ENTRYPOINT ["/app/entrypoint.sh"]
+ENTRYPOINT ["entrypoint.sh"]
