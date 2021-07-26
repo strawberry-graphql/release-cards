@@ -2,7 +2,7 @@
 
 cd /app
 
-DEBUG=pw:api PWDEBUG=console npm run create-card
+DEBUG=pw:api npm run create-card
 
 echo "Card done"
 
