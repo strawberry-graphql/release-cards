@@ -16,6 +16,7 @@ RUN apt-get install -y --no-install-recommends \
 RUN mkdir -p /app/playwright-browsers
 ENV PLAYWRIGHT_BROWSERS_PATH /app/playwright-browsers/
 RUN npm install playwright
+RUN npx playwright install-deps chromium
 
 WORKDIR /app
 
