@@ -7,8 +7,6 @@ RUN apt-get update && apt-get install -y curl && \
 # ENV PLAYWRIGHT_BROWSERS_PATH /app/playwright-browsers/
 
 # RUN mkdir -p /app/playwright-browsers
-RUN npm install -g playwright
-RUN playwright install-deps chromium
 
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
