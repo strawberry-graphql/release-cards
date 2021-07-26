@@ -10,11 +10,5 @@ RUN apt-get update && apt-get install -y curl && \
 RUN npm install -g playwright
 RUN playwright install-deps chromium
 
-COPY package*.json /app/
-
-RUN cd /app && npm install
-
-COPY . .
-
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
