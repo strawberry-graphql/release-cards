@@ -12,7 +12,7 @@ RUN playwright install-deps chromium
 
 COPY package*.json /app/
 
-RUN cd /app; npm install
+RUN cd /app && npm install
 
 COPY . .
 
