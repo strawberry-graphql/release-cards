@@ -10,9 +10,9 @@ RUN apt-get update && apt-get install -y curl && \
 RUN npm install -g playwright
 RUN playwright install-deps chromium
 
-COPY package*.json ./
+COPY package*.json /app
 
-RUN npm install
+RUN cd /app; npm install
 
 COPY . .
 

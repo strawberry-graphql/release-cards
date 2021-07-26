@@ -1,6 +1,6 @@
 #!/bin/sh -l
 
-cd /
+cd /app
 npm run build
 npm run create-card
 
