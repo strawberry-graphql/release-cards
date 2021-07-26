@@ -30,7 +30,7 @@ function fileExists(file) {
 
   await fs.writeFile(tmpPath, template);
 
-  const browser = await chromium.launch({ headless: false });
+  const browser = await chromium.launch({ headless: true });
   const page = await browser.newPage();
   await page.goto(`file://${tmpPath}`);
 
