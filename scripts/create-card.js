@@ -30,12 +30,23 @@ function fileExists(file) {
 
   await fs.writeFile(tmpPath, template);
 
+  console.log("launching chrome");
+
   const browser = await chromium.launch({ headless: true });
   const page = await browser.newPage();
+
+  console.log("going to file", tmpPath);
   await page.goto(`file://${tmpPath}`);
 
+  console.log("waiting for card");
   const elementHandle = await page.$(".card");
+
+  console.log("screen");
+
   await elementHandle.screenshot({ path: "screenshot.png" });
 
+  console.log("close");
+
   await browser.close();
+  console.log("done");
 })();
