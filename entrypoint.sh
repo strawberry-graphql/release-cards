@@ -1,8 +1,7 @@
 #!/bin/sh -l
 
-echo "script"
-echo $PWD
-
+cd /
+npm run build
 npm run create-card
 
 
