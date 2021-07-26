@@ -18,5 +18,5 @@ jobs:
       - name: 'Upload Artifact'
         uses: actions/upload-artifact@v2
         with:
-          path: /app/screenshot.png 
+          path: screenshot.png 
           retention-days: 5
