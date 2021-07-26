@@ -1,6 +1,6 @@
+import React from "react";
 import { createElement, ReactNode } from "react";
 import marksy from "marksy";
-import "highlight.js/styles/github.css";
 
 import hljs from "highlight.js";
 // @ts-ignore
@@ -20,7 +20,7 @@ const compile = marksy({
         <pre className="text-4xl leading-snug mb-4">
           <code
             dangerouslySetInnerHTML={{
-              __html: hljs.highlight(language, code).value,
+              __html: hljs.highlight(code, { language }).value,
             }}
           />
         </pre>

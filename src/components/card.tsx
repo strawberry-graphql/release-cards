@@ -1,3 +1,4 @@
+import React from "react";
 import { Logo } from "./logo";
 import { ReleaseContributor } from "./release-contributor";
 import { ReleaseDescription } from "./release-description";

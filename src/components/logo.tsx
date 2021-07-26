@@ -1,3 +1,5 @@
+import React from "react";
+
 export const Logo = () => (
   <svg className="w-40" fill="none" viewBox="0 0 1952 2357">
     <path
@@ -29,8 +31,8 @@ export const Logo = () => (
         y2="743.4"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#11998E"></stop>
-        <stop offset="1" stop-color="#38EF7D"></stop>
+        <stop stopColor="#11998E"></stop>
+        <stop offset="1" stopColor="#38EF7D"></stop>
       </linearGradient>
       <linearGradient
         id="prefix__paint1_linear"
@@ -40,8 +42,8 @@ export const Logo = () => (
         y2="2299.7"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#EE0979"></stop>
-        <stop offset="1" stop-color="#FF6A00"></stop>
+        <stop stopColor="#EE0979"></stop>
+        <stop offset="1" stopColor="#FF6A00"></stop>
       </linearGradient>
     </defs>
   </svg>
