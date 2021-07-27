@@ -19,7 +19,7 @@ export const Card = ({ version, description, contributor }: Props) => (
       <ReleaseContributor contributor={contributor} />
     </div>
 
-    <div className="absolute bottom-16 right-16 w-2/12">
+    <div className="absolute bottom-16 right-16">
       <Logo />
     </div>
   </div>
