@@ -8,14 +8,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Read release text
-        run: echo "::set-output name=value::$(cat RELEASE.md)"
-        id: description
+        run: echo "DESCRIPTION=$(cat RELEASE.md)" >> $GITHUB_ENV
       - name: Create Card Test
         uses: ./
         with:
           version: 1.0
           contributor: Jake
-          description: ${{ steps.description.value }}
+          description: ${{ env.DESCRIPTION }}
 
       - name: 'Upload Artifact'
         uses: actions/upload-artifact@v2
