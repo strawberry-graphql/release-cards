@@ -8,7 +8,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Read release text
-        run: echo "DESCRIPTION=$(cat RELEASE.md)" >> $GITHUB_ENV
+        run: | 
+          echo 'DESCRIPTION<<EOF' >> $GITHUB_ENV
+          cat RELEASE.md >> $GITHUB_ENV
+          echo 'EOF' >> $GITHUB_ENV
       - name: Create Card Test
         uses: ./
         with:
