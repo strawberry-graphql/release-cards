@@ -10,7 +10,7 @@ jobs:
       - name: Read release text
         run: | 
           echo 'DESCRIPTION<<EOF' >> $GITHUB_ENV
-          cat RELEASE.md >> $GITHUB_ENV
+          cat RELEASE.md | sed 's/`/\\`/g' >> $GITHUB_ENV
           echo 'EOF' >> $GITHUB_ENV
       - name: Create Card Test
         uses: ./
