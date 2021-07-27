@@ -17,7 +17,7 @@ const compile = marksy({
     ),
     code: ({ code, language }: { code: string; language: string }) => {
       return (
-        <pre className="text-4xl leading-snug mb-4">
+        <pre className="text-3xl leading-10 mb-4">
           <code
             dangerouslySetInnerHTML={{
               __html: hljs.highlight(code, { language }).value,
@@ -33,4 +33,4 @@ export const ReleaseDescription = ({
   description,
 }: {
   description: string;
-}) => <div>{compile(description).tree}</div>;
+}) => <div className="leading-tight text-4xl">{compile(description).tree}</div>;

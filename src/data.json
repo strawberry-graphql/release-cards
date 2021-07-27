@@ -1,5 +1,0 @@
-{
-  "version": "123",
-  "contributor": "Jake",
-  "description": "Something that has **markdown in it**\n\n```python\nimport strawberry\n@strawberry.type\nclass Query:\n    x: int\n```"
-}

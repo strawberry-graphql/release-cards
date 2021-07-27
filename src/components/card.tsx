@@ -11,18 +11,16 @@ type Props = {
 };
 
 export const Card = ({ version, description, contributor }: Props) => (
-  <div className="card border-8 p-16 flex flex-col">
+  <div className="card border-8 p-16 flex flex-col relative">
     <ReleaseTitle version={version} />
 
-    <div className="flex text-5xl leading-relaxed flex-1">
-      <div className="w-10/12 flex justify-between flex-col">
-        <ReleaseDescription description={description} />
-        <ReleaseContributor contributor={contributor} />
-      </div>
+    <ReleaseDescription description={description} />
+    <div className="mt-auto">
+      <ReleaseContributor contributor={contributor} />
+    </div>
 
-      <div className="w-2/12 self-end flex justify-end">
-        <Logo />
-      </div>
+    <div className="absolute bottom-16 right-16 w-2/12">
+      <Logo />
     </div>
   </div>
 );
