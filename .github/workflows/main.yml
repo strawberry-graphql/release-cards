@@ -3,7 +3,7 @@ on: [push]
 jobs:
   test_job:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: Test workflow
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -11,7 +11,7 @@ jobs:
         uses: ./
         id: test
         with:
-          version: 1
+          version: 1.0
           contributor: Jake
           description: |
             This a super **cool** release.
