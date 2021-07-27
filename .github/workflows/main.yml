@@ -7,30 +7,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Read release text
+        run: echo "::set-output name=value::$(cat RELEASE.md)"
+        id: description
       - name: Create Card Test
         uses: ./
-        id: test
         with:
           version: 1.0
           contributor: Jake
-          description: |
-            This a super **cool** release.
-
-            [aaa](http://google.com)
-
-            \`\`\`python
-            import strawberry
-
-            @strawberry.type
-            class Code:
-              asd: str
-            \`\`\`
-
-            - a list
-            - a list
-
-            Awesome.
-
+          description: ${{ steps.description.value }}
 
       - name: 'Upload Artifact'
         uses: actions/upload-artifact@v2
