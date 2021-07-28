@@ -20,7 +20,9 @@ jobs:
           description: ${{ env.DESCRIPTION }}
       - name: Reads image as base64
         run: |
-          echo IMAGE="$(cat screenshot.png | base64 -w 0)" >> $GITHUB_ENV
+          curl -X POST "http://imgur.com/upload" \
+            -H "Referer: http://imgur.com/upload" \
+            -F "Filedata=@screenshot.png;filename=screenshot.png;type=image/png"
 
       - uses: mshick/add-pr-comment@v1
         with:
