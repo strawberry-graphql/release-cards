@@ -30,7 +30,7 @@ jobs:
           message: |
             **Hello**
             🌏
-            ${{ env.IMAGE_URL }}
+            ![](${{ env.IMAGE_URL }})
             !
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           repo-token-user-login: 'github-actions[bot]'
