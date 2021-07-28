@@ -20,9 +20,9 @@ jobs:
           description: ${{ env.DESCRIPTION }}
       - name: Reads image as base64
         run: |
-          curl -X POST "http://imgur.com/upload" \
-            -H "Referer: http://imgur.com/upload" \
-            -F "Filedata=@screenshot.png;filename=screenshot.png;type=image/png"
+          curl --location --request POST "https://api.imgur.com/3/image" \
+            --header 'Authorization: Client-ID 81ab2f3855f4524' \
+            --form "image=@screenshot.png;filename=screenshot.png;type=image/png"
 
       - uses: mshick/add-pr-comment@v1
         with:
