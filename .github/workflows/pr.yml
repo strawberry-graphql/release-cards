@@ -20,17 +20,17 @@ jobs:
           description: ${{ env.DESCRIPTION }}
       - name: Reads image as base64
         run: |
-          curl --location --request POST "https://api.imgur.com/3/image" \
+          echo IMAGE_URL=(curl --location --request POST "https://api.imgur.com/3/image" \
             --header 'Authorization: Client-ID 81ab2f3855f4524' \
             --form "image=@screenshot.png;filename=screenshot.png;type=image/png" \
-            | jq  --raw-output '.data.link'
+            | jq  --raw-output '.data.link') >> $GITHUB_ENV
 
       - uses: mshick/add-pr-comment@v1
         with:
           message: |
             **Hello**
             🌏
-            ${{ env.IMAGE }}
+            ${{ env.IMAGE_URL }}
             !
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           repo-token-user-login: 'github-actions[bot]'
