@@ -5,11 +5,29 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Read release text
+        run: | 
+          echo 'DESCRIPTION<<EOF' >> $GITHUB_ENV
+          cat RELEASE.md | sed 's/`/\\`/g' >> $GITHUB_ENV
+          echo 'EOF' >> $GITHUB_ENV
+      - name: Create Card Test
+        uses: ./
+        with:
+          version: "1.0"
+          contributor: Jake
+          description: ${{ env.DESCRIPTION }}
+      - name: Reads image as base64
+        run: |
+          echo IMAGE="$(cat screenshot.png | base64 -w 0)" >> $GITHUB_ENV
+
       - uses: mshick/add-pr-comment@v1
         with:
           message: |
             **Hello**
             🌏
+            ${{ env.IMAGE }}
             !
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           repo-token-user-login: 'github-actions[bot]'
