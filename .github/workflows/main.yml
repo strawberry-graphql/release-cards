@@ -1,0 +1,27 @@
+on: [push]
+
+jobs:
+  test_job:
+    runs-on: ubuntu-latest
+    name: Test workflow
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Read release text
+        run: | 
+          echo 'DESCRIPTION<<EOF' >> $GITHUB_ENV
+          cat RELEASE.md | sed 's/`/\\`/g' >> $GITHUB_ENV
+          echo 'EOF' >> $GITHUB_ENV
+      - name: Create Card Test
+        uses: ./
+        with:
+          version: "1.0"
+          contributor: Jake
+          description: ${{ env.DESCRIPTION }}
+
+      - name: 'Upload Artifact'
+        uses: actions/upload-artifact@v2
+        with:
+          name: screenshot.png
+          path: screenshot.png 
+          retention-days: 5
