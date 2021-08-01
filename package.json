@@ -27,8 +27,7 @@
   "scripts": {
     "start": "parcel serve index.html ./src/**/*.tsx",
     "build": "parcel build index.html --public-url '.' --no-optimize --target=node",
-    "create-card": "node scripts/create-card.js",
-    "postinstall": "playwright install-deps chromium"
+    "create-card": "node scripts/create-card.js"
   },
   "eslintConfig": {
     "extends": [
