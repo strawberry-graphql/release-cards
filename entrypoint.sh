@@ -1,11 +1,9 @@
 #!/bin/sh -l
 
-cd $GITHUB_WORKSPACE
-
+cd /app
 
 npm run build
 npm run create-card -- "$@"
-
 
 echo "Card done"
 
