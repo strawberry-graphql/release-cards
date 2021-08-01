@@ -5,6 +5,9 @@ const path = require("path");
 
 const templatePath = path.resolve(`${__dirname}/../dist/index.html`);
 const tmpPath = path.resolve(`${__dirname}/../dist/tmp.html`);
+const outputPath = path.resolve(
+  path.join(process.env.GITHUB_WORKSPACE, "screenshot.png")
+);
 
 const [version, contributor, description] = process.argv.slice(2);
 
@@ -39,6 +42,6 @@ function fileExists(file) {
 
   const elementHandle = await page.$(".card");
 
-  await elementHandle.screenshot({ path: "screenshot.png" });
+  await elementHandle.screenshot({ path: outputPath });
   await browser.close();
 })();
