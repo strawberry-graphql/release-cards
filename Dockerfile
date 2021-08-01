@@ -4,6 +4,8 @@ RUN apt-get update && apt-get install -y curl && \
     curl -sL https://deb.nodesource.com/setup_14.x | bash - && \
     apt-get install -y nodejs fonts-inter
 
+ENV PLAYWRIGHT_BROWSERS_PATH=0
+
 RUN mkdir /app
 COPY . /app/
 RUN cd /app && npm install
