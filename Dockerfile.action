@@ -1,0 +1,3 @@
+FROM patrick91/strawberry-release-cards
+
+ENTRYPOINT ["/entrypoint"]
