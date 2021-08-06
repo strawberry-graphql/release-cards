@@ -7,8 +7,8 @@ inputs:
   contributor:
     description: 'Contributor name'
     required: true
-  description:
-    description: 'Release description'
+  description_base64:
+    description: 'Release description (base64 encoded)'
     required: true
 runs:
   using: 'docker'
@@ -16,4 +16,4 @@ runs:
   args:
     - ${{ inputs.version }}
     - ${{ inputs.contributor }}
-    - ${{ inputs.description }}
+    - ${{ inputs.description_base64 }}

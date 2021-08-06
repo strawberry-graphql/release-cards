@@ -9,7 +9,10 @@ const outputPath = path.resolve(
   path.join(process.env.GITHUB_WORKSPACE, "screenshot.png")
 );
 
-const [version, contributor, description] = process.argv.slice(2);
+const [version, contributor, descriptionEncoded] = process.argv.slice(2);
+
+const buff = new Buffer(descriptionEncoded, "base64");
+const description = buff.toString("ascii");
 
 function fileExists(file) {
   return fs
