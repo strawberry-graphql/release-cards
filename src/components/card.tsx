@@ -11,7 +11,7 @@ type Props = {
 };
 
 export const Card = ({ version, description, contributor }: Props) => (
-  <div className="card border-8 p-8 flex flex-col relative">
+  <div className="card p-8 flex flex-col relative">
     <ReleaseTitle version={version} />
 
     <ReleaseDescription description={description} />
