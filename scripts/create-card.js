@@ -11,8 +11,8 @@ const outputPath = path.resolve(
 
 const [version, contributor, descriptionEncoded] = process.argv.slice(2);
 
-const buff = new Buffer(descriptionEncoded, "base64");
-const description = buff.toString("ascii");
+const buff = Buffer.from(descriptionEncoded, "base64");
+const description = buff.toString("utf8");
 
 function fileExists(file) {
   return fs
