@@ -5,7 +5,7 @@ export const ReleaseContributor = ({
 }: {
   contributor: string;
 }) => (
-  <p className="text-4xl">
+  <p className="text-3xl">
     Contributed by <strong>{contributor}</strong>
   </p>
 );
