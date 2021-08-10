@@ -15,7 +15,13 @@ const compile = marksy({
     p: ({ children }: { children: ReactNode }) => (
       <p className="mb-4">{children}</p>
     ),
-    code: ({ code, language }: { code: string; language: string }) => {
+    code: ({
+      code,
+      language = "plaintext",
+    }: {
+      code: string;
+      language: string;
+    }) => {
       return (
         <pre className="text-3xl leading-10 mb-4">
           <code
