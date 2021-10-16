@@ -6,7 +6,7 @@ const path = require("path");
 const templatePath = path.resolve(`${__dirname}/../dist/index.html`);
 const tmpPath = path.resolve(`${__dirname}/../dist/tmp.html`);
 const outputPath = path.resolve(
-  path.join(process.env.GITHUB_WORKSPACE, "screenshot.png")
+  path.join(process.env.GITHUB_WORKSPACE || "", "screenshot.png")
 );
 
 const [version, contributor, descriptionEncoded] = process.argv.slice(2);
