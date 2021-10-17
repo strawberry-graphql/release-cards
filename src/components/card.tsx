@@ -15,7 +15,7 @@ export const Card = ({ version, description, contributor }: Props) => (
     <ReleaseTitle version={version} />
 
     <ReleaseDescription description={description} />
-    <div className="mt-auto">
+    <div className="mt-12">
       <ReleaseContributor contributor={contributor} />
     </div>
 
