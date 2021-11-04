@@ -11,16 +11,20 @@ type Props = {
 };
 
 export const Card = ({ version, description, contributor }: Props) => (
-  <div className="card p-8 flex flex-col relative">
+  <div className="card p-8 flex flex-col">
     <ReleaseTitle version={version} />
 
-    <ReleaseDescription description={description} />
-    <div className="mt-12">
-      <ReleaseContributor contributor={contributor} />
-    </div>
+    <div className="flex">
+      <div className="flex flex-col mr-10">
+        <ReleaseDescription description={description} />
+        <div className="mt-12">
+          <ReleaseContributor contributor={contributor} />
+        </div>
+      </div>
 
-    <div className="absolute bottom-8 right-8">
-      <Logo />
+      <div className="w-40">
+        <Logo />
+      </div>
     </div>
   </div>
 );
