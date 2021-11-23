@@ -39,4 +39,4 @@ export const ReleaseDescription = ({
   description,
 }: {
   description: string;
-}) => <div className="leading-tight text-4xl break-all">{compile(description).tree}</div>;
+}) => <div className="leading-tight text-4xl break-words">{compile(description).tree}</div>;
