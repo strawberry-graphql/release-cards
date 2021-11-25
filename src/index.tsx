@@ -5,16 +5,12 @@ import { Card } from "./components/card";
 
 const App = () => {
   const description = `
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+Hello, this is an example short description
 `;
 
   return (
     <React.StrictMode>
-      <Card
-        version="1.0"
-        contributor="Jake"
-        description={description}
-      />
+      <Card version="1.0" contributor="Jake" description={description} />
     </React.StrictMode>
   );
 };
