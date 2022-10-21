@@ -12,6 +12,12 @@ const compile = marksy({
   createElement,
 
   elements: {
+    h1: ({ id, children }) =>
+      (<h1 id={id} className="text-2xl font-bold">{children}</h1>),
+    h2: ({ id, children }) =>
+      (<h2 id={id} className="text-xl font-bold">{children}</h2>),
+    h3: ({ id, children }) =>
+      (<h3 id={id} className="text-lg font-bold">{children}</h3>),
     p: ({ children }: { children: ReactNode }) => (
       <p className="mb-4">{children}</p>
     ),
