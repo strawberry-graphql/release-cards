@@ -13,11 +13,11 @@ const compile = marksy({
 
   elements: {
     h1: ({ id, children }) =>
-      (<h1 id={id} className="text-5xl font-bold">{children}</h1>),
+      (<h1 id={id} className="text-5xl mb-4 font-bold">{children}</h1>),
     h2: ({ id, children }) =>
-      (<h2 id={id} className="text-4xl font-bold">{children}</h2>),
+      (<h2 id={id} className="text-4xl mb-4 font-bold">{children}</h2>),
     h3: ({ id, children }) =>
-      (<h3 id={id} className="text-3xl font-bold">{children}</h3>),
+      (<h3 id={id} className="text-3xl mb-4 font-bold">{children}</h3>),
     p: ({ children }: { children: ReactNode }) => (
       <p className="mb-4">{children}</p>
     ),
