@@ -21,6 +21,9 @@ const compile = marksy({
     p: ({ children }: { children: ReactNode }) => (
       <p className="mb-4">{children}</p>
     ),
+    li: ({ children }: { children: ReactNode }) => (
+      <li className="ml-2">- {children}</li>
+    ),
     code: ({
       code,
       language = "plaintext",
