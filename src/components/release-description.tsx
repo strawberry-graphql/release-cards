@@ -5,8 +5,11 @@ import marksy from "marksy";
 import hljs from "highlight.js";
 // @ts-ignore
 import python from "highlight.js/lib/languages/python";
+// @ts-ignore
+import graphql from "highlight.js/lib/languages/graphql";
 
 hljs.registerLanguage("python", python);
+hljs.registerLanguage("graphql", graphql);
 
 const compile = marksy({
   createElement,
