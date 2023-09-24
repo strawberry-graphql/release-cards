@@ -6,10 +6,11 @@ import hljs from "highlight.js";
 // @ts-ignore
 import python from "highlight.js/lib/languages/python";
 // @ts-ignore
-import graphql from "highlight.js/lib/languages/graphql";
+import hljsDefineGraphQL from "highlightjs-graphql";
 
 hljs.registerLanguage("python", python);
-hljs.registerLanguage("graphql", graphql);
+hljsDefineGraphQL(hljs);
+
 
 const compile = marksy({
   createElement,

@@ -12,6 +12,7 @@
     "@types/react-dom": "^17.0.9",
     "autoprefixer": "^9.8.6",
     "highlight.js": "^11.1.0",
+    "highlightjs-graphql": "^1.0.2",
     "marksy": "^8.0.0",
     "parcel": "^2.0.0-beta.2",
     "parcel-namer-without-hash": "0.0.1",
